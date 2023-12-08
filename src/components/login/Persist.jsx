@@ -28,7 +28,7 @@ function Persist() {
 				try {
 					const { data } = await refresh();
 					if (data === undefined) {
-						toast.error("Your login has expired", {
+						toast.error("Sign in for the better experience", {
 							position: "top-center",
 							theme: "colored",
 						});

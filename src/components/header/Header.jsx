@@ -50,7 +50,7 @@ function Header() {
 					</>
 				) : (
 					<>
-						{location.pathname === "/login" ? (
+						{location.pathname === "/login" || location.pathname === "/signup" ? (
 							<i
 								onClick={() => navigate("/")}
 								className="fa-solid fa-house  text-lg text-yellow-100 mr-1 lg:mr-5 cursor-pointer hover:scale-105 duration-300"
