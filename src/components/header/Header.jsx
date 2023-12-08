@@ -11,7 +11,7 @@ function Header() {
 	return (
 		<div className="w-full z-50 sticky top-0 flex justify-between items-center p-1 bg-gray-500">
 			<div>
-				<i className="fa-solid fa-bars text-lg text-yellow-100 mr-1 lg:mr-5 cursor-pointer hover:scale-105 duration-300"></i>
+				<i className="fa-solid fa-bars text-lg ml-1 lg:ml-5 text-yellow-100 mr-1 lg:mr-5 cursor-pointer hover:scale-105 duration-300"></i>
 			</div>
 			<div>
 				<div
@@ -36,7 +36,7 @@ function Header() {
 							></i>
 						) : (
 							<img
-								className="rounded-full hover:scale-105 duration-300 cursor-pointer h-6 lg:h-8"
+								className="rounded-full hover:scale-105 duration-300 mr-1 lg:mr-5 cursor-pointer h-6 lg:h-8"
 								src={
 									user?.avatar && user.avatar !== null
 										? user.avatar
