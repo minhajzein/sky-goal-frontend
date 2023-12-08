@@ -23,7 +23,7 @@ function Persist() {
 	const [refresh, { isUninitialized, isLoading, isSuccess, isError, error }] =
 		useRefreshMutation();
 	useEffect(() => {
-		if (effectRan.current === true || process.env.NODE_ENV !== "development") {
+		if (effectRan.current === true) {
 			const verifyRefreshToken = async () => {
 				try {
 					const { data } = await refresh();
@@ -34,7 +34,7 @@ function Persist() {
 						});
 					} else {
 						dispatch(setUserData(data?.user));
-						dispatch(setCredentials(data));
+						dispatch(setCredentials({ token: data?.accessToken }));
 						setTruePersist(true);
 					}
 				} catch (error) {

@@ -9,7 +9,7 @@ function Header() {
 	const navigate = useNavigate();
 
 	return (
-		<div className="w-full flex justify-between items-center p-1 bg-gray-500">
+		<div className="w-full z-50 sticky top-0 flex justify-between items-center p-1 bg-gray-500">
 			<div>
 				<i className="fa-solid fa-bars text-lg text-yellow-100 mr-1 lg:mr-5 cursor-pointer hover:scale-105 duration-300"></i>
 			</div>

@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useLoginMutation } from "../../redux/apiSlice/authApiService";
 import Loading from "../loading/Loading";
+import { toast } from "react-toastify";
+import { setCredentials } from "../../redux/slices/authSlice";
 
 function Login() {
 	const [hidePassword, setHidePassword] = useState(true);
@@ -30,8 +32,9 @@ function Login() {
 		onSubmit: async values => {
 			try {
 				const response = await login(values);
+
 				if (response.data.success) {
-					dispatch(setCredentials({ accessToken: response.data.accessToken }));
+					dispatch(setCredentials({ token: response.data.accessToken }));
 					dispatch(setUserdata(response.data.user));
 					navigate("/");
 				} else {
@@ -42,6 +45,10 @@ function Login() {
 				}
 			} catch (error) {
 				console.log(error);
+				toast.error("Server not responding", {
+					position: "top-center",
+					theme: "colored",
+				});
 			}
 		},
 	});
